@@ -5,3 +5,10 @@ table {
 .container {
   padding: 20px 40px;
 }
+
+.style-button {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f44336;
+  border-radius: 5px;
+}

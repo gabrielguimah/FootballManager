@@ -6,7 +6,6 @@ import { Jogador } from "../models/Jogador";
 
 @Injectable()
 export class ElencoService {
-  elencoApiUrl = "http://localhost:3000/elenco";
   constructor(private http: HttpClient) {}
 
   getElenco(): Observable<Jogador[]> {
@@ -21,7 +20,7 @@ export class ElencoService {
     return this.http.put<Jogador>(`${API_PATH}elenco/${jogador.id}`, jogador);
   }
 
-  deleteJogadorElenco(id: string): Observable<Jogador> {
+  deleteJogadorElenco(id: number): Observable<Jogador> {
     return this.http.delete<Jogador>(`${API_PATH}elenco/${id}`);
   }
 }

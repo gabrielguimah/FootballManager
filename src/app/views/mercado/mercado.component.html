@@ -1,15 +1,5 @@
 <div class="container">
-  <h3 style="color: #f44336">ELENCO</h3>
-
-  <button
-    class="style-button"
-    color="warn"
-    (click)="abrirModal(null)"
-    mat-button
-  >
-    Adicionar jogador +
-  </button>
-
+  <h3 style="color: #f44336">MERCADO</h3>
   <table #elenco mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="numeroCamisa">
       <th mat-header-cell *matHeaderCellDef>Número da Camisa</th>
@@ -24,6 +14,11 @@
     <ng-container matColumnDef="posicao">
       <th mat-header-cell *matHeaderCellDef>Posição</th>
       <td mat-cell *matCellDef="let element">{{ element.posicao }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef>Time</th>
+      <td mat-cell *matCellDef="let element">{{ element.time }}</td>
     </ng-container>
 
     <ng-container matColumnDef="idade">
@@ -77,14 +72,9 @@
     <ng-container matColumnDef="action" stickyEnd>
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <button (click)="abrirModal(element)" mat-icon-button>
+        <button (click)="comprarJogador(element)" mat-icon-button>
           <mat-icon color="warn" style="margin-right: 20px">
-            create_icon</mat-icon
-          >
-        </button>
-        <button (click)="venderJogador(element)" mat-icon-button>
-          <mat-icon color="warn" style="margin-right: 20px">
-            attach_money</mat-icon
+            local_grocery_store</mat-icon
           >
         </button>
       </td>

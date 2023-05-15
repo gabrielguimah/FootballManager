@@ -14,13 +14,15 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatButtonModule } from "@angular/material/button";
 import { ElencoComponent } from "./views/elenco/elenco.component";
 import { EscalacaoComponent } from "./views/escalacao/escalacao.component";
-import { EncontrarJogadoresComponent } from "./views/encontrar-jogadores/encontrar-jogadores.component";
+import { MercadoComponent } from "./views/mercado/mercado.component";
 import { EstatisticasComponent } from "./views/estatisticas/estatisticas.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { ModalJogadorComponent } from "./shared/modal-jogador/modal-jogador.component";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatSelectModule } from "@angular/material/select";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatCardModule } from "@angular/material/card";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
@@ -32,7 +34,7 @@ import { HttpClientModule } from "@angular/common/http";
     FooterComponent,
     ElencoComponent,
     EscalacaoComponent,
-    EncontrarJogadoresComponent,
+    MercadoComponent,
     EstatisticasComponent,
     ModalJogadorComponent,
   ],
@@ -48,6 +50,8 @@ import { HttpClientModule } from "@angular/common/http";
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatSnackBarModule,
+    MatCardModule,
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,

@@ -2,18 +2,20 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import {
   MatDialog,
   MatPaginator,
+  MatSnackBar,
   MatTable,
   MatTableDataSource,
 } from "@angular/material";
 import { Jogador } from "src/app/models/Jogador";
 import { ElencoService } from "src/app/services/elenco.service";
+import { MercadoService } from "src/app/services/mercado.service";
 import { ModalJogadorComponent } from "src/app/shared/modal-jogador/modal-jogador.component";
 
 @Component({
   selector: "app-elenco",
   templateUrl: "./elenco.component.html",
   styleUrls: ["./elenco.component.css"],
-  providers: [ElencoService],
+  providers: [ElencoService, MercadoService],
 })
 export class ElencoComponent implements OnInit {
   displayedColumns: string[] = [
@@ -36,7 +38,12 @@ export class ElencoComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(public elencoService: ElencoService, public dialog: MatDialog) {}
+  constructor(
+    public elencoService: ElencoService,
+    public mercadoService: MercadoService,
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     this.carregarElenco();
@@ -90,12 +97,11 @@ export class ElencoComponent implements OnInit {
         if (!resultado.id) {
           this.elencoService.addJogadorElenco(resultado).subscribe((data) => {
             const newData = this.dataSource.data;
-            newData.push({
-              ...data,
-              id: Math.floor(Date.now() * Math.random()).toString(36),
-            });
+            newData.push(data);
             this.dataSource.data = newData;
             this.elenco.renderRows();
+            this.mensagem("Jogador adicionado com sucesso", "OK");
+            this.carregarElenco();
           });
         } else {
           this.elencoService.editJogadorElenco(resultado).subscribe((data) => {
@@ -104,22 +110,54 @@ export class ElencoComponent implements OnInit {
             );
             this.dataSource.data = newData;
             this.elenco.renderRows();
+            this.mensagem("Jogador editado com sucesso", "OK");
+            this.carregarElenco();
           });
         }
-        this.carregarElenco();
       }
     });
   }
 
-  venderJogador(id: string, valor: number) {
-    this.elencoService.deleteJogadorElenco(id).subscribe(() => {
-      const data = this.dataSource.data.filter((jogador) => jogador.id !== id);
-
+  venderJogador(jogadorVendido: Jogador) {
+    this.elencoService.deleteJogadorElenco(jogadorVendido.id).subscribe(() => {
+      const data = this.dataSource.data.filter(
+        (jogador) => jogador.id !== jogadorVendido.id
+      );
       this.dataSource.data = data;
+      this.carregarElenco();
+
+      const novoJogadorMercado = {
+        numeroCamisa: jogadorVendido.numeroCamisa,
+        nome: jogadorVendido.nome,
+        posicao: jogadorVendido.posicao,
+        time: "Várzea FC",
+        idade: jogadorVendido.idade,
+        altura: jogadorVendido.altura,
+        jogos: jogadorVendido.jogos,
+        gols: jogadorVendido.gols,
+        assistencias: jogadorVendido.assistencias,
+        desarmes: jogadorVendido.desarmes,
+        defesas: jogadorVendido.defesas,
+        status: jogadorVendido.status,
+        valor: jogadorVendido.valor,
+      };
+
+      this.adicionarJogadorAoMercado(novoJogadorMercado);
     });
+  }
 
-    this.carregarElenco();
+  mensagem(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 
-    console.log(valor, "do jogador");
+  adicionarJogadorAoMercado(novoJogadorMercado: any) {
+    this.mercadoService.addJogadorMercado(novoJogadorMercado).subscribe(() => {
+      this.mensagem(
+        `${novoJogadorMercado.nome} (${novoJogadorMercado.posicao}) vendido por R$ ${novoJogadorMercado.valor}`,
+        "OK"
+      );
+    });
   }
 }

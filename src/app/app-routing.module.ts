@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ElencoComponent } from "./views/elenco/elenco.component";
-import { EncontrarJogadoresComponent } from "./views/encontrar-jogadores/encontrar-jogadores.component";
+import { MercadoComponent } from "./views/mercado/mercado.component";
 import { EstatisticasComponent } from "./views/estatisticas/estatisticas.component";
 import { HomeComponent } from "./views/home/home.component";
 import { EscalacaoComponent } from "./views/escalacao/escalacao.component";
@@ -20,8 +20,8 @@ const routes: Routes = [
     component: EscalacaoComponent,
   },
   {
-    path: "encontrar_jogadores",
-    component: EncontrarJogadoresComponent,
+    path: "mercado",
+    component: MercadoComponent,
   },
   {
     path: "estatisticas",

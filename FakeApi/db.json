@@ -1,3 +1,44 @@
 {
-  "elenco": []
+  "elenco": [
+    {
+      "numeroCamisa": 12,
+      "nome": "Piroca",
+      "posicao": "LAT",
+      "idade": 12,
+      "altura": 12,
+      "jogos": 12,
+      "gols": 12,
+      "assistencias": 12,
+      "desarmes": 12,
+      "defesas": 12,
+      "status": "APTO",
+      "valor": 3546345,
+      "id": 1
+    }
+  ],
+  "escalacao": {
+    "ata1": {
+      "id": 1,
+      "numeroCamisa": 9,
+      "nome": "Mentiras"
+    }
+  },
+  "mercado": [
+    {
+      "numeroCamisa": 2,
+      "nome": "Mentiras",
+      "posicao": "ATA",
+      "time": "Várzea FC",
+      "idade": 20,
+      "altura": 171,
+      "jogos": 12,
+      "gols": 57,
+      "assistencias": 0,
+      "desarmes": 0,
+      "defesas": 0,
+      "status": "LESIONADO",
+      "valor": 999999999,
+      "id": 2
+    }
+  ]
 }

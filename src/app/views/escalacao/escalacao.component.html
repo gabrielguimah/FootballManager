@@ -1,1 +1,196 @@
-<p>escalacao works!</p>
+<div class="cards-container">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.ata1 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.ata1, "ATA") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.ata1" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.ata1" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.ata1">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.ata2 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.ata2, "ATA") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.ata2" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.ata2" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.ata2">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.ata3 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.ata3, "ATA") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.ata3" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.ata3" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.ata3">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="cards-container">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.mei1 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.mei1, "MEI") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.mei1" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.mei1" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.mei1">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.mei2 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.mei2, "MEI") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.mei2" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.mei2" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.mei2">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.mei3 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.mei3, "MEI") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.mei3" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.mei3" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.mei3">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="cards-container">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.lat1 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.lat1, "LAT") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.lat1" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.lat1" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.lat1">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.zag1 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.zag1, "ZAG") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.zag1" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.zag1" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.zag1">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.zag2 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.zag2, "ZAG") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.zag2" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.zag2" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.zag2">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.lat2 ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.lat2, "LAT") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.lat2" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.lat2" mat-button>
+        ADICIONAR
+      </button>
+      <button color="warn" mat-button [disabled]="!dataSource.lat2">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="cards-container">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title
+        [ngClass]="dataSource.gol ? 'jogadorEscalado' : ''"
+        color="warn"
+      >
+        {{ formatarCardTitulo(dataSource.gol, "GOL") }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-actions>
+      <button color="warn" *ngIf="dataSource.gol" mat-button>REMOVER</button>
+      <button color="warn" *ngIf="!dataSource.gol" mat-button>ADICIONAR</button>
+      <button color="warn" mat-button [disabled]="!dataSource.gol">(C)</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

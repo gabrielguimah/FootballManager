@@ -27,7 +27,6 @@ export class ModalJogadorComponent implements OnInit {
 
   ngOnInit() {
     this.editando = !!this.data.id;
-    console.log(this.editando);
   }
 
   constructor(

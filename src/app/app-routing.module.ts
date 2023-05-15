@@ -4,7 +4,7 @@ import { ElencoComponent } from "./views/elenco/elenco.component";
 import { EncontrarJogadoresComponent } from "./views/encontrar-jogadores/encontrar-jogadores.component";
 import { EstatisticasComponent } from "./views/estatisticas/estatisticas.component";
 import { HomeComponent } from "./views/home/home.component";
-import { ProximaPartidaComponent } from "./views/proxima-partida/proxima-partida.component";
+import { EscalacaoComponent } from "./views/escalacao/escalacao.component";
 
 const routes: Routes = [
   {
@@ -16,8 +16,8 @@ const routes: Routes = [
     component: ElencoComponent,
   },
   {
-    path: "proxima_partida",
-    component: ProximaPartidaComponent,
+    path: "escalacao",
+    component: EscalacaoComponent,
   },
   {
     path: "encontrar_jogadores",

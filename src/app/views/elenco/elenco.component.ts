@@ -5,61 +5,15 @@ import {
   MatTable,
   MatTableDataSource,
 } from "@angular/material";
+import { Jogador } from "src/app/models/Jogador";
+import { ElencoService } from "src/app/services/elenco.service";
 import { ModalJogadorComponent } from "src/app/shared/modal-jogador/modal-jogador.component";
-
-export interface Jogador {
-  id: string;
-  numeroCamisa: number;
-  nome: string;
-  posicao: string;
-  idade: number;
-  altura: number;
-  jogos: number;
-  gols: number;
-  assistencias: number;
-  desarmes: number;
-  defesas: number;
-  status: string;
-  valor: number;
-}
-
-export const data: Jogador[] = [
-  {
-    id: "1",
-    numeroCamisa: 1,
-    nome: "Hirata",
-    idade: 20,
-    posicao: "ZAG",
-    altura: 188,
-    jogos: 6,
-    gols: 1,
-    assistencias: 2,
-    desarmes: 18,
-    defesas: 0,
-    status: "SUSPENSO",
-    valor: 1000000,
-  },
-  {
-    id: "2",
-    numeroCamisa: 2,
-    nome: "Hirata",
-    posicao: "ZAG",
-    idade: 20,
-    altura: 188,
-    jogos: 6,
-    gols: 1,
-    assistencias: 2,
-    desarmes: 18,
-    defesas: 0,
-    status: "SUSPENSO",
-    valor: 1000000,
-  },
-];
 
 @Component({
   selector: "app-elenco",
   templateUrl: "./elenco.component.html",
   styleUrls: ["./elenco.component.css"],
+  providers: [ElencoService],
 })
 export class ElencoComponent implements OnInit {
   displayedColumns: string[] = [
@@ -76,15 +30,22 @@ export class ElencoComponent implements OnInit {
     "status",
     "action",
   ];
-  dataSource = new MatTableDataSource<Jogador>(data);
+  dataSource = new MatTableDataSource<Jogador>();
 
   @ViewChild(MatTable) elenco!: MatTable<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public elencoService: ElencoService, public dialog: MatDialog) {}
 
   ngOnInit() {
+    this.carregarElenco();
+  }
+
+  carregarElenco() {
+    this.elencoService.getElenco().subscribe((data: Jogador[]) => {
+      this.dataSource.data = data;
+    });
     this.dataSource.paginator = this.paginator;
   }
 
@@ -127,30 +88,38 @@ export class ElencoComponent implements OnInit {
     dialogRef.afterClosed().subscribe((resultado: Jogador) => {
       if (resultado) {
         if (!resultado.id) {
-          const data = this.dataSource.data;
-          data.push({
-            ...resultado,
-            id: Math.floor(Date.now() * Math.random()).toString(36),
+          this.elencoService.addJogadorElenco(resultado).subscribe((data) => {
+            const newData = this.dataSource.data;
+            newData.push({
+              ...data,
+              id: Math.floor(Date.now() * Math.random()).toString(36),
+            });
+            this.dataSource.data = newData;
+            this.elenco.renderRows();
           });
-          this.dataSource.data = data;
         } else {
-          const newData = this.dataSource.data.map((jogador) =>
-            jogador.id === resultado.id ? resultado : jogador
-          );
-          this.dataSource.data = newData;
+          this.elencoService.editJogadorElenco(resultado).subscribe((data) => {
+            const newData = this.dataSource.data.map((jogador) =>
+              jogador.id === data.id ? data : jogador
+            );
+            this.dataSource.data = newData;
+            this.elenco.renderRows();
+          });
         }
-        this.elenco.renderRows();
+        this.carregarElenco();
       }
     });
   }
 
-  venderJogador(numeroCamisa: number, valor: number) {
-    const data = this.dataSource.data.filter(
-      (jogador) => jogador.numeroCamisa !== numeroCamisa
-    );
+  venderJogador(id: string, valor: number) {
+    this.elencoService.deleteJogadorElenco(id).subscribe(() => {
+      const data = this.dataSource.data.filter((jogador) => jogador.id !== id);
 
-    this.dataSource.data = data;
+      this.dataSource.data = data;
+    });
 
-    console.log(valor, "valor da venda");
+    this.carregarElenco();
+
+    console.log(valor, "do jogador");
   }
 }

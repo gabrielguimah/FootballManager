@@ -13,7 +13,7 @@ import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatButtonModule } from "@angular/material/button";
 import { ElencoComponent } from "./views/elenco/elenco.component";
-import { ProximaPartidaComponent } from "./views/proxima-partida/proxima-partida.component";
+import { EscalacaoComponent } from "./views/escalacao/escalacao.component";
 import { EncontrarJogadoresComponent } from "./views/encontrar-jogadores/encontrar-jogadores.component";
 import { EstatisticasComponent } from "./views/estatisticas/estatisticas.component";
 import { MatDialogModule } from "@angular/material/dialog";
@@ -31,7 +31,7 @@ import { HttpClientModule } from "@angular/common/http";
     HeaderComponent,
     FooterComponent,
     ElencoComponent,
-    ProximaPartidaComponent,
+    EscalacaoComponent,
     EncontrarJogadoresComponent,
     EstatisticasComponent,
     ModalJogadorComponent,

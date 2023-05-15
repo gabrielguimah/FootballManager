@@ -1,51 +1,5 @@
 {
-  "elenco": [
-    {
-      "numeroCamisa": 2,
-      "nome": "Mentiras",
-      "posicao": "ATA",
-      "idade": 20,
-      "altura": 171,
-      "jogos": 12,
-      "gols": 57,
-      "assistencias": 0,
-      "desarmes": 0,
-      "defesas": 0,
-      "status": "LESIONADO",
-      "valor": 999999999,
-      "id": 1
-    },
-    {
-      "numeroCamisa": 12,
-      "nome": "Piroca",
-      "posicao": "LAT",
-      "idade": 12,
-      "altura": 12,
-      "jogos": 12,
-      "gols": 12,
-      "assistencias": 12,
-      "desarmes": 12,
-      "defesas": 12,
-      "status": "APTO",
-      "valor": 3546345,
-      "id": 2
-    },
-    {
-      "numeroCamisa": 12,
-      "nome": "cacab",
-      "posicao": "",
-      "idade": null,
-      "altura": null,
-      "jogos": 12,
-      "gols": 89,
-      "assistencias": null,
-      "desarmes": null,
-      "defesas": null,
-      "status": "",
-      "valor": null,
-      "id": 3
-    }
-  ],
+  "elenco": [],
   "escalacao": {
     "ata1": {
       "id": 1,
@@ -117,6 +71,54 @@
       "status": "",
       "valor": null,
       "id": 7
+    },
+    {
+      "numeroCamisa": 12,
+      "nome": "cacab",
+      "posicao": "",
+      "time": "Várzea FC",
+      "idade": null,
+      "altura": null,
+      "jogos": 12,
+      "gols": 89,
+      "assistencias": null,
+      "desarmes": null,
+      "defesas": null,
+      "status": "",
+      "valor": null,
+      "id": 8
+    },
+    {
+      "numeroCamisa": 12,
+      "nome": "Piroca",
+      "posicao": "LAT",
+      "time": "Várzea FC",
+      "idade": 12,
+      "altura": 12,
+      "jogos": 12,
+      "gols": 12,
+      "assistencias": 12,
+      "desarmes": 12,
+      "defesas": 12,
+      "status": "APTO",
+      "valor": 3546345,
+      "id": 9
+    },
+    {
+      "numeroCamisa": 2,
+      "nome": "Mentiras",
+      "posicao": "ATA",
+      "time": "Várzea FC",
+      "idade": 20,
+      "altura": 171,
+      "jogos": 12,
+      "gols": 57,
+      "assistencias": 0,
+      "desarmes": 0,
+      "defesas": 0,
+      "status": "LESIONADO",
+      "valor": 999999999,
+      "id": 10
     }
   ]
 }

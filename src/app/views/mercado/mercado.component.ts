@@ -29,6 +29,7 @@ export class MercadoComponent implements OnInit {
     "desarmes",
     "defesas",
     "status",
+    "valor",
     "action",
   ];
   dataSource = new MatTableDataSource<JogadorCompra>();

@@ -1,3 +1,11 @@
-<p>
-  header works!
-</p>
+<mat-toolbar color="warn">
+  <span (click)="navegar('home')">Football Manager</span>
+  <button (click)="navegar('elenco')" mat-button>Elenco</button>
+  <button (click)="navegar('proxima_partida')" mat-button>
+    Próxima partida
+  </button>
+  <button (click)="navegar('encontrar_jogadores')" mat-button>
+    Encontrar jogadores
+  </button>
+  <button (click)="navegar('estatisticas')" mat-button>Estatísticas</button>
+</mat-toolbar>

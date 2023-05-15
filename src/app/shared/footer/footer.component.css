@@ -1,0 +1,13 @@
+.container {
+  background-color: #f44336;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+}

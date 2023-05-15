@@ -1,0 +1,132 @@
+<h1 mat-dialog-title>
+  {{ editando ? "Editar jogador" : "Adicionar jogador da base" }}
+</h1>
+<div mat-dialog-content>
+  <p>Número da Camisa</p>
+  <mat-form-field>
+    <input
+      placeholder="Número da camisa"
+      type="number"
+      matInput
+      [(ngModel)]="data.numeroCamisa"
+      min="0"
+    />
+  </mat-form-field>
+
+  <p>Nome</p>
+  <mat-form-field>
+    <input placeholder="Nome na camisa" matInput [(ngModel)]="data.nome" />
+  </mat-form-field>
+
+  <p>Posição</p>
+  <mat-form-field>
+    <mat-select placeholder="Posição do jogador" [(ngModel)]="data.posicao">
+      <mat-option *ngFor="let posicao of posicoes" [value]="posicao.value">
+        {{ posicao.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p>Idade</p>
+  <mat-form-field>
+    <input
+      placeholder="Idade"
+      type="number"
+      matInput
+      [(ngModel)]="data.idade"
+      min="0"
+    />
+  </mat-form-field>
+
+  <p>Altura (cm)</p>
+  <mat-form-field>
+    <input
+      placeholder="Altura em centímetros"
+      type="number"
+      matInput
+      [(ngModel)]="data.altura"
+      min="0"
+    />
+  </mat-form-field>
+
+  <p>Jogos</p>
+  <mat-form-field>
+    <input
+      placeholder="Jogos jogados"
+      type="number"
+      matInput
+      [(ngModel)]="data.jogos"
+      min="0"
+    />
+  </mat-form-field>
+
+  <p>Gols</p>
+  <mat-form-field>
+    <input
+      placeholder="Gols marcados"
+      type="number"
+      matInput
+      [(ngModel)]="data.gols"
+      min="0"
+    />
+  </mat-form-field>
+
+  <p>Assistências</p>
+  <mat-form-field>
+    <input
+      placeholder="Assistências realizadas"
+      type="number"
+      matInput
+      [(ngModel)]="data.assistencias"
+      min="0"
+    />
+  </mat-form-field>
+
+  <p>Desarmes</p>
+  <mat-form-field>
+    <input
+      placeholder="Desarmes realizados"
+      type="number"
+      matInput
+      [(ngModel)]="data.desarmes"
+      min="0"
+    />
+  </mat-form-field>
+
+  <p>Defesas</p>
+  <mat-form-field>
+    <input
+      placeholder="Defesas realizadas"
+      type="number"
+      matInput
+      [(ngModel)]="data.defesas"
+      min="0"
+    />
+  </mat-form-field>
+
+  <p>Status</p>
+  <mat-form-field>
+    <mat-select placeholder="Status do jogador" [(ngModel)]="data.status">
+      <mat-option *ngFor="let status of status" [value]="status.value">
+        {{ status.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p>Valor</p>
+  <mat-form-field>
+    <input
+      placeholder="Valor de mercado"
+      type="number"
+      matInput
+      [(ngModel)]="data.valor"
+      min="0"
+    />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+    {{ editando ? "Editar" : "Adicionar" }}
+  </button>
+</div>

@@ -1,3 +1,49 @@
-<p>
-  estatisticas works!
-</p>
+<div class="cards-container">
+  <mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ liderGols?.nome || "Sem dados" }}</mat-card-title>
+      <mat-card-subtitle>Líder em gols</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ liderGols?.gols }} G em {{ liderGols?.jogos }} jogos</mat-card-content
+    >
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{
+        liderAssistencias?.nome || "Sem dados"
+      }}</mat-card-title>
+      <mat-card-subtitle>Líder em assistências</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ liderAssistencias?.assistencias }} A em
+      {{ liderAssistencias?.jogos }} jogos</mat-card-content
+    >
+  </mat-card>
+</div>
+<div class="cards-container">
+  <mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ liderDesarmes?.nome || "Sem dados" }}</mat-card-title>
+      <mat-card-subtitle>Líder em desarmes</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ liderDesarmes?.desarmes }} DE em
+      {{ liderDesarmes?.jogos }} jogos</mat-card-content
+    >
+  </mat-card>
+  <mat-card class="card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ liderDefesas?.nome || "Sem dados" }}</mat-card-title>
+      <mat-card-subtitle>Líder em defesas</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ liderDefesas?.defesas }} DF em
+      {{ liderDefesas?.jogos }} jogos</mat-card-content
+    >
+  </mat-card>
+</div>

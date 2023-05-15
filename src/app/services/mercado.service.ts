@@ -12,7 +12,7 @@ export class MercadoService {
     return this.http.get<JogadorCompra[]>(`${API_PATH}mercado`);
   }
 
-  comprarJogador(id: number): Observable<JogadorCompra> {
+  deleteJogadorMercado(id: number): Observable<JogadorCompra> {
     return this.http.delete<JogadorCompra>(`${API_PATH}mercado/${id}`);
   }
 

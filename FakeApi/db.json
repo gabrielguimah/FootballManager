@@ -1,6 +1,21 @@
 {
   "elenco": [
     {
+      "numeroCamisa": 2,
+      "nome": "Mentiras",
+      "posicao": "ATA",
+      "idade": 20,
+      "altura": 171,
+      "jogos": 12,
+      "gols": 57,
+      "assistencias": 0,
+      "desarmes": 0,
+      "defesas": 0,
+      "status": "LESIONADO",
+      "valor": 999999999,
+      "id": 1
+    },
+    {
       "numeroCamisa": 12,
       "nome": "Piroca",
       "posicao": "LAT",
@@ -13,7 +28,22 @@
       "defesas": 12,
       "status": "APTO",
       "valor": 3546345,
-      "id": 1
+      "id": 2
+    },
+    {
+      "numeroCamisa": 12,
+      "nome": "cacab",
+      "posicao": "",
+      "idade": null,
+      "altura": null,
+      "jogos": 12,
+      "gols": 89,
+      "assistencias": null,
+      "desarmes": null,
+      "defesas": null,
+      "status": "",
+      "valor": null,
+      "id": 3
     }
   ],
   "escalacao": {
@@ -25,20 +55,68 @@
   },
   "mercado": [
     {
-      "numeroCamisa": 2,
-      "nome": "Mentiras",
-      "posicao": "ATA",
+      "numeroCamisa": null,
+      "nome": "",
+      "posicao": "",
       "time": "Várzea FC",
-      "idade": 20,
-      "altura": 171,
-      "jogos": 12,
-      "gols": 57,
-      "assistencias": 0,
-      "desarmes": 0,
-      "defesas": 0,
-      "status": "LESIONADO",
-      "valor": 999999999,
-      "id": 2
+      "idade": null,
+      "altura": null,
+      "jogos": null,
+      "gols": 34,
+      "assistencias": null,
+      "desarmes": null,
+      "defesas": null,
+      "status": "",
+      "valor": null,
+      "id": 4
+    },
+    {
+      "numeroCamisa": null,
+      "nome": "",
+      "posicao": "",
+      "time": "Várzea FC",
+      "idade": null,
+      "altura": null,
+      "jogos": null,
+      "gols": 56,
+      "assistencias": null,
+      "desarmes": null,
+      "defesas": null,
+      "status": "",
+      "valor": null,
+      "id": 5
+    },
+    {
+      "numeroCamisa": null,
+      "nome": "",
+      "posicao": "",
+      "time": "Várzea FC",
+      "idade": null,
+      "altura": null,
+      "jogos": null,
+      "gols": 2,
+      "assistencias": null,
+      "desarmes": null,
+      "defesas": null,
+      "status": "",
+      "valor": null,
+      "id": 6
+    },
+    {
+      "numeroCamisa": null,
+      "nome": "",
+      "posicao": "",
+      "time": "Várzea FC",
+      "idade": null,
+      "altura": null,
+      "jogos": null,
+      "gols": 66,
+      "assistencias": null,
+      "desarmes": null,
+      "defesas": null,
+      "status": "",
+      "valor": null,
+      "id": 7
     }
   ]
 }

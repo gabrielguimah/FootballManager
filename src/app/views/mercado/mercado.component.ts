@@ -75,17 +75,19 @@ export class MercadoComponent implements OnInit {
   }
 
   removerJogadorMercado(jogadorSelecionado: any) {
-    this.mercadoService.comprarJogador(jogadorSelecionado.id).subscribe(() => {
-      const data = this.dataSource.data.filter(
-        (jogador) => jogador.id !== jogadorSelecionado.id
-      );
-      this.dataSource.data = data;
+    this.mercadoService
+      .deleteJogadorMercado(jogadorSelecionado.id)
+      .subscribe(() => {
+        const data = this.dataSource.data.filter(
+          (jogador) => jogador.id !== jogadorSelecionado.id
+        );
+        this.dataSource.data = data;
 
-      this.mensagem(
-        `${jogadorSelecionado.nome} (${jogadorSelecionado.posicao}) comprado por R$ ${jogadorSelecionado.valor}`,
-        "OK"
-      );
-    });
+        this.mensagem(
+          `${jogadorSelecionado.nome} (${jogadorSelecionado.posicao}) comprado por R$ ${jogadorSelecionado.valor}`,
+          "OK"
+        );
+      });
   }
 
   mensagem(message: string, action: string) {

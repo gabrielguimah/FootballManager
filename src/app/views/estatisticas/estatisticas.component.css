@@ -1,0 +1,15 @@
+.card {
+  margin: 30px;
+  max-width: 400px;
+  max-height: 200px;
+}
+
+.cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jogadorEscalado {
+  color: #f44336;
+}
